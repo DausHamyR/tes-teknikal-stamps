@@ -1,4 +1,7 @@
-let api = 'https://api.openweathermap.org/data/3.0/onecall?lat=-6.1753942&lon=106.827183&appid=d1efae84ef16448c0ab078f518032206&lang=id';
+require('dotenv').config()
+
+const key = process.env.KEY
+let api = `https://api.openweathermap.org/data/3.0/onecall?lat=-6.1753942&lon=106.827183&appid=${key}&lang=id`;
 fetch(api)
     .then(response => response.json())
     .then(data => {
